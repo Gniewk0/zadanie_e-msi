@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanie zdalne e-MSI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="lewy">
+        <div class="menu">
+          <a href="rozne.html">Różne kontrolki HTML</a>
+          <a href="pracownicy.html">Tabela Pracowników</a>
+          <a href="faktury.html">Tabela Faktur VAT</a>
+          <a href="delegacje.html">Tabela Delegacji BD</a>
+          <a href="index.html" class="active">Dane Kontrahentów</a>
+        </div> 
+    </div>
+    <div id="prawy">
+        
+    <div class="all">
+      <div class="tab">
+          <table id="table">
+              <tr>
+                  <th>NIP</th>
+                  <th>REGON</th>
+                  <th>NAZWA</th>
+                  <th>CZY PŁATNIK VAT?</th>
+                  <th>ULICA</th>
+                  <th>NUMER DOMU</th>
+                  <th>NUMER MIESZKANIA</th>
+              </tr>
+          </table>
+      </div>
+      <div class="form">
+        <div class="form2">
+        <input type="text" placeholder="NIP" name="nip" id="nip">
+        <input type="text" placeholder="REGON" name="regon" id="regon">
+        <input type="text" placeholder="NAZWA" name="nazwa" id="nazwa">
+        CZY PŁATNIK VAT? :<input type="checkbox" name="vat" id="vat">
+        <input type="text" placeholder="ULICA" name="ulica" id="ulica">
+        <input type="text" placeholder="NUMER DOMU" name="dom" id="dom">
+        <input type="text" placeholder="NUMER MIESZKANIA" name="mieszkanie" id="mieszkanie">
+        </div>
+          <button value="add" onclick="addRow();">Add</button>
+          <button value="edit" onclick="editRow();">Edit</button>
+          <button value="remove" onclick="removeRow();">Remove</button>
+      </div>
+  </div>
+  
+  <script>
+      
+      var rIndex,
+          table = document.getElementById("table");
+      
+      function checkEmptyInput()
+      {
+          var isEmpty = false,
+              nip = document.getElementById("nip").value,
+              regon = document.getElementById("regon").value,
+              nazwa = document.getElementById("nazwa").value;
+              vat = document.getElementById("vat").value;
+              ulica = document.getElementById("ulica").value;
+              dom = document.getElementById("dom").value;
+              mieszkanie = document.getElementById("mieszkanie").value;
+      
+          if(nip === ""){
+              alert("proszę podać NIP");
+              isEmpty = true;
+          }
+          else if(regon === ""){
+              alert("proszę podać REGON");
+              isEmpty = true;
+          }
+          else if(nazwa === ""){
+              alert("proszę podać nazwe");
+              isEmpty = true;
+          }
+          else if(ulica === ""){
+              alert("proszę podać ulice");
+              isEmpty = true;
+          }
+          else if(dom === ""){
+              alert("proszę podać nr domu");
+              isEmpty = true;
+          }
+          else if(mieszkanie === ""){
+              alert("proszę podać nr mieszkania");
+              isEmpty = true;
+          }
+          return isEmpty;
+      }
+      
+      function addRow()
+      {
+          if(!checkEmptyInput()){
+          var newRow = table.insertRow(table.length),
+              cell1 = newRow.insertCell(0),
+              cell2 = newRow.insertCell(1),
+              cell3 = newRow.insertCell(2),
+              cell4 = newRow.insertCell(3),
+              cell5 = newRow.insertCell(4),
+              cell6 = newRow.insertCell(5),
+              cell7 = newRow.insertCell(6),
+              nip = document.getElementById("nip").value,
+              regon = document.getElementById("regon").value,
+              nazwa = document.getElementById("nazwa").value;
+              vat = document.getElementById("vat").value;mieszkanie
+              ulica = document.getElementById("ulica").value;
+              dom = document.getElementById("dom").value;
+              mieszkanie = document.getElementById("mieszkanie").value;
+      
+          cell1.innerHTML = nip;
+          cell2.innerHTML = regon;
+          cell3.innerHTML = nazwa;
+          cell4.innerHTML = vat;
+          cell5.innerHTML = ulica;
+          cell6.innerHTML = dom;
+          cell7.innerHTML = mieszkanie;
+          selectedRow();
+          
+      }
+      }
+      
+      function selectedRow()
+      {
+          
+          for(var i = 1; i < table.rows.length; i++)
+          {
+              table.rows[i].onclick = function()
+              {
+                rIndex = this.rowIndex;
+                document.getElementById("nip").value = this.cells[0].innerHTML;
+                document.getElementById("regon").value = this.cells[1].innerHTML;
+                document.getElementById("nazwa").value = this.cells[2].innerHTML;
+                document.getElementById("vat").value = this.cells[3].innerHTML;
+                document.getElementById("ulica").value = this.cells[4].innerHTML;
+                document.getElementById("dom").value = this.cells[5].innerHTML;
+                document.getElementById("mieszkanie").value = this.cells[6].innerHTML;
+              };
+          }
+      }
+      selectedRow();
+      
+      function editRow()
+      {
+          var nip = document.getElementById("nip").value,
+              regon = document.getElementById("regon").value,
+              nazwa = document.getElementById("nazwa").value;
+              vat = document.getElementById("vat").value;mieszkanie
+              ulica = document.getElementById("ulica").value;
+              dom = document.getElementById("dom").value;
+              mieszkanie = document.getElementById("mieszkanie").value;
+         if(!checkEmptyInput()){
+          table.rows[rIndex].cells[0].innerHTML = nip;
+          table.rows[rIndex].cells[1].innerHTML = regon;
+          table.rows[rIndex].cells[2].innerHTML = nazwa;
+          table.rows[rIndex].cells[3].innerHTML = vat;
+          table.rows[rIndex].cells[4].innerHTML = ulica;
+          table.rows[rIndex].cells[5].innerHTML = dom;
+          table.rows[rIndex].cells[6].innerHTML = mieszkanie;
+        }
+      }
+      
+      function removeRow()
+      {
+          table.deleteRow(rIndex);
+          document.getElementById("nip").value = "";
+          document.getElementById("regon").value = "";
+          document.getElementById("nazwa").value = "";
+          document.getElementById("vat").value = "";
+          document.getElementById("ulica").value = "";
+          document.getElementById("dom").value = "";
+          document.getElementById("mieszkanie").value = "";
+      }
+  </script>      
+
+    </div>
+</body>
+</html>

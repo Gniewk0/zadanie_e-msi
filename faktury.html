@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanie zdalne e-MSI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="lewy">
+        <div class="menu">
+          <a href="rozne.html">Różne kontrolki HTML</a>
+          <a href="pracownicy.html">Tabela Pracowników</a>
+          <a href="faktury.html" class="active">Tabela Faktur VAT</a>
+          <a href="delegacje.html">Tabela Delegacji BD</a>
+          <a href="index.html">Dane Kontrahentów</a>
+        </div> 
+    </div>
+    <div id="prawy">
+        
+    <div class="all">
+      <div class="tab">
+          <table id="table">
+              <tr>
+                  <th>Lp.</th>
+                  <th>Opis</th>
+                  <th>MPK</th>
+                  <th>Kwota Netto</th>
+                  <th>ilość</th>
+                  <th>VAT %</th>
+                  <th>Kwota Brutto</th>
+                  <th>Wartość Netto</th>
+                  <th>Wartość Brutto</th>
+              </tr>
+              <tr>
+                <th>1</th>
+                <th>Zakupy</th>
+                <th>Księgowość</th>
+                <th id="n1">1000</th>
+                <th id="ilosc1">1</th>
+                <th id="v1">23</th>
+                <th id="kb1">1230</th>
+                <th id="wn1">1000</th>
+                <th id="wb1">1230</th>
+            </tr>
+            <tr>
+                <th>2</th>
+                <th>Zakupy</th>
+                <th>Księgowość</th>
+                <th id="n2">1000</th>
+                <th id="ilosc2">1</th>
+                <th id="v2">23</th>
+                <th id="kb2">1230</th>
+                <th id="wn2">1000</th>
+                <th id="wb2">1230</th>
+            </tr>
+            <tr>
+                <th>3</th>
+                <th>Zakupy</th>
+                <th>Księgowość</th>
+                <th id="n3">1000</th>
+                <th id="ilosc3">1</th>
+                <th id="v3">23</th>
+                <th id="kb3">1230</th>
+                <th id="wn3">1000</th>
+                <th id="wb3">1230</th>
+            </tr>
+            <tr>
+                <th>4</th>
+                <th>Zakupy</th>
+                <th>Księgowość</th>
+                <th id="n4">1000</th>
+                <th id="ilosc4">1</th>
+                <th id="v4">23</th>
+                <th id="kb4">1230</th>
+                <th id="wn4">1000</th>
+                <th id="wb4">1230</th>
+            </tr>
+            <tr>
+                <th>5</th>
+                <th>Zakupy</th>
+                <th>Księgowość</th>
+                <th>1000</th>
+                <th id="ilosc5">1</th>
+                <th id="v5">23</th>
+                <th id="kb5">1230</th>
+                <th id="wn5">1000</th>
+                <th id="wb5">1230</th>       
+            </tr>
+          </table>
+        
+      </div>
+      <div>
+      <div class="zmiana">
+          1
+        <select id="vat1" name="vat1">
+          <option value="" disabled selected>VAT</option>
+          <option value="23">23%</option>
+          <option value="0">0%</option>
+        </select> 
+        <input type="button" id="vatButton1" value="zmiana vat" onclick="changevat1()">
+
+        <input type="number" id="nr1" name="nr1">
+        <input type="button" id="nrButton1" value="zmiana ilosci" onclick="changamount1()">
+
+        <input type="button" id="oblicz1" value="oblicz" onclick="oblicz1()">
+      </div>
+
+      <div class="zmiana">
+        2
+      <select id="vat2" name="vat2">
+        <option value="" disabled selected>VAT</option>
+        <option value="23">23%</option>
+        <option value="0">0%</option>
+      </select> 
+      <input type="button" id="vatButton2" value="zmiana vat" onclick="changevat2()">
+
+      <input type="number" id="nr2" name="nr2">
+      <input type="button" id="nrButton2" value="zmiana ilosci" onclick="changamount2()">
+
+      <input type="button" id="oblicz2" value="oblicz" onclick="oblicz2()">
+    </div>
+
+    <div class="zmiana">
+        3
+      <select id="vat3" name="vat3">
+        <option value="" disabled selected>VAT</option>
+        <option value="23">23%</option>
+        <option value="0">0%</option>
+      </select> 
+      <input type="button" id="vatButton3" value="zmiana vat" onclick="changevat3()">
+
+      <input type="number" id="nr3" name="nr3">
+      <input type="button" id="nrButton3" value="zmiana ilosci" onclick="changamount3()">
+
+      <input type="button" id="oblicz3" value="oblicz" onclick="oblicz3()">
+    </div>
+
+    <div class="zmiana">
+        4
+      <select id="vat4" name="vat4">
+        <option value="" disabled selected>VAT</option>
+        <option value="23">23%</option>
+        <option value="0">0%</option>
+      </select> 
+      <input type="button" id="vatButton4" value="zmiana vat" onclick="changevat4()">
+
+      <input type="number" id="nr4" name="nr4">
+      <input type="button" id="nrButton4" value="zmiana ilosci" onclick="changamount4()">
+
+      <input type="button" id="oblicz4" value="oblicz" onclick="oblicz4()">
+    </div>
+
+    <div class="zmiana">
+        5
+      <select id="vat5" name="vat5">
+        <option value="" disabled selected>VAT</option>
+        <option value="23">23%</option>
+        <option value="0">0%</option>
+      </select> 
+      <input type="button" id="vatButton5" value="zmiana vat" onclick="changevat5()">
+
+      <input type="number" id="nr5" name="nr5">
+      <input type="button" id="nrButton5" value="zmiana ilosci" onclick="changamount5()">
+
+      <input type="button" id="oblicz5" value="oblicz" onclick="oblicz5()">
+    </div>
+
+      
+    </div>
+    </div>
+    <script>
+
+        function changevat1(){
+            let vat1 = document.getElementById('vat1').value;
+            let v1 = document.getElementById('v1');
+            v1.innerHTML = vat1;
+            }
+        
+        function changamount1(){
+            let nr1 = document.getElementById('nr1').value;
+            let ilosc1 = document.getElementById('ilosc1');
+            ilosc1.innerHTML = nr1;
+            }
+        
+        function oblicz1(){
+
+        }
+
+        function changevat2(){
+            let vat2 = document.getElementById('vat2').value;
+            let v2 = document.getElementById('v2');
+            v2.innerHTML = vat2;
+            }
+        
+        function changamount2(){
+            let nr2 = document.getElementById('nr2').value;
+            let ilosc2 = document.getElementById('ilosc2');
+            ilosc2.innerHTML = nr2;
+            }
+        
+        function oblicz2(){
+
+        }
+
+        function changevat3(){
+            let vat3 = document.getElementById('vat3').value;
+            let v3 = document.getElementById('v3');
+            v3.innerHTML = vat3;
+            }
+        
+        function changamount3(){
+            let nr3 = document.getElementById('nr3').value;
+            let ilosc3 = document.getElementById('ilosc3');
+            ilosc3.innerHTML = nr3;
+            }
+        
+        function oblicz3(){
+
+        }
+
+        function changevat4(){
+            let vat4 = document.getElementById('vat4').value;
+            let v4 = document.getElementById('v4');
+            v4.innerHTML = vat4;
+            }
+        
+        function changamount4(){
+            let nr4 = document.getElementById('nr4').value;
+            let ilosc4 = document.getElementById('ilosc4');
+            ilosc4.innerHTML = nr4;
+            }
+        
+        function oblicz4(){
+
+        }
+
+        function changevat5(){
+            let vat5 = document.getElementById('vat5').value;
+            let v5 = document.getElementById('v5');
+            v5.innerHTML = vat5;
+            }
+        
+        function changamount5(){
+            let nr5 = document.getElementById('nr5').value;
+            let ilosc5 = document.getElementById('ilosc5');
+            ilosc5.innerHTML = nr5;
+            }
+        
+        function oblicz5(){
+
+        }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanie zdalne e-MSI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="lewy">
+        <div class="menu">
+          <a href="rozne.html">Różne kontrolki HTML</a>
+          <a href="pracownicy.html" class="active">Tabela Pracowników</a>
+          <a href="faktury.html">Tabela Faktur VAT</a>
+          <a href="delegacje.html">Tabela Delegacji BD</a>
+          <a href="index.html">Dane Kontrahentów</a>
+        </div> 
+    </div>
+    <div id="prawy">
+        
+    <div class="all">
+      <div class="tab">
+          <table id="table">
+              <tr>
+                  <th>LP</th>
+                  <th>Imię</th>
+                  <th>Nazwisko</th>
+                  <th>Stanowisko</th>
+                  <th>Data zatrudnienia</th>
+                  <th>Ilość dni urlopowych</th>
+              </tr>
+              <tr class="tr">
+                <th>1</th>
+                <th>Anna</th>
+                <th>Nowak</th>
+                <th>Dyrektor</th>
+                <th>02.2006</th>
+                <th>26</th>
+            </tr>
+            <tr class="tr2">
+                <th>2</th>
+                <th>Janusz</th>
+                <th>Piątek</th>
+                <th>Spawacz</th>
+                <th>11.2016</th>
+                <th>10</th>
+            </tr>
+            <tr class="tr">
+                <th>3</th>
+                <th>Piotr</th>
+                <th>Kozłowski</th>
+                <th>Kierowca</th>
+                <th>12.2011</th>
+                <th>5</th>
+            </tr>
+            <tr class="tr2">
+                <th>4</th>
+                <th>Adam</th>
+                <th>Sowiński</th>
+                <th>Kierownik</th>
+                <th>04.2018</th>
+                <th>26</th>
+            </tr>
+            <tr class="tr">
+                <th>5</th>
+                <th>Tomasz</th>
+                <th>Boberek</th>
+                <th>Dyrektor</th>
+                <th>02.2006</th>
+                <th>26</th>
+            </tr>
+          </table>
+
+          <input type="color" id="color1">
+          <input type="button" id="colorButton1" value="zmiana koloru 1" onclick="changeColor1()">
+
+          <input type="color" id="color2">
+          <input type="button" id="colorButton2" value="zmiana koloru 2" onclick="changeColor2()">
+
+         
+      </div>
+    
+    </div>
+
+    <script>
+        function changeColor1(){
+            let color = document.getElementById('color1').value;
+            let tr = document.getElementsByClassName('tr');
+            for(i = 0; i < tr.length; i++) {
+            tr[i].style.backgroundColor = color;
+            }
+        }
+        function changeColor2(){
+            let color = document.getElementById('color2').value;
+            let tr = document.getElementsByClassName('tr2');
+            for(i = 0; i < tr.length; i++) {
+            tr[i].style.backgroundColor = color;
+            }
+        }
+    </script>
+</body>
+</html>
